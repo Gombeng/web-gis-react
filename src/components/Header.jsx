@@ -6,7 +6,9 @@ export default function Header({ ...rest }) {
         zIndex: "9999",
         backgroundColor: "white",
         position: "absolute",
-        bottom: 0,
+        top: 12,
+        left: 55,
+        borderRadius: 3
       }}
       {...rest}
     >
