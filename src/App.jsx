@@ -1,11 +1,8 @@
-import MapComponent from "./MapComponent";
+import "leaflet/dist/leaflet.css";
+import Map from "./components/Map";
 
 const App = () => {
-  return (
-    <>
-        <MapComponent />
-    </>
-  );
+  return <Map />;
 };
 
 export default App;
