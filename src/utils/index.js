@@ -38,7 +38,7 @@ export function getRandomNumber(number) {
   return Math.floor(Math.random() * number);
 }
 
-export function generateKecamatanData(numKecamatan) {
+export function generateKecamatanData(numKecamatan, radius) {
   function printRange(number) {
     return number >= 0 && number <= 300
       ? { color: "green", drugSpread: "Low" }
@@ -53,13 +53,13 @@ export function generateKecamatanData(numKecamatan) {
     const { color, drugSpread } = printRange(randomNumber);
     const [lat, lng] = getRandomLatLngInPolygon(polygon);
     data.push({
-      id: `kecamatan-${i+1}`,
+      id: `Kecamatan-${i + 1}`,
       lat: lng.toFixed(7),
       lng: lat.toFixed(7),
       randomNumber,
       color,
       drugSpread,
-      radius: 1000,
+      radius: radius,
     });
   }
   return data;

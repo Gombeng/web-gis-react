@@ -13,9 +13,13 @@ export default function LayerControlBaseLayer() {
 }
 
 function BaseLayer({ name, url, subdomains }) {
+  const tileLayer = { url };
+  if (subdomains) {
+    tileLayer.subdomains = subdomains;
+  }
   return (
     <LayersControl.BaseLayer checked={name === "Google Satellite"} name={name}>
-      <TileLayer url={url} subdomains={subdomains} />
+      <TileLayer {...tileLayer} />
     </LayersControl.BaseLayer>
   );
 }

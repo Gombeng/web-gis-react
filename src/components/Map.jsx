@@ -5,8 +5,8 @@ import LayersControlContainer from "./LayerControlContainer";
 import Header from "./Header";
 
 export default function Map() {
-  const amount = 50;
-  const kecamatanData = generateKecamatanData(amount);
+  const amount = 7;
+  const kecamatanData = generateKecamatanData(amount, 6000);
   const { lat, lng } = kecamatanData[getRandomNumber(amount)];
 
   return (
@@ -14,7 +14,6 @@ export default function Map() {
       style={{ height: "100vh" }}
       center={[lat, lng]}
       zoom={11}
-      touchZoom={false}
     >
       <Header />
       <LayersControlContainer kecamatanData={kecamatanData} />

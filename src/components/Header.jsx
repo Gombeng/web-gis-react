@@ -3,7 +3,7 @@ export default function Header({ ...rest }) {
     <div
       style={{
         padding: ".8rem",
-        zIndex: "9999",
+        zIndex: "999",
         backgroundColor: "white",
         position: "absolute",
         top: 12,
