@@ -27,8 +27,7 @@ body {
 /* container overlays */
 .leaflet-control-layers-overlays label,
 .leaflet-control-layers-base label {
-  padding: 0.8rem 1.5rem;
-  margin: 0.15rem;
+  padding: 0.5rem 1.5rem;
 }
 
 /* checkbox */
