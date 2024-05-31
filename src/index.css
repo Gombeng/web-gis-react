@@ -16,6 +16,12 @@ body {
   margin: 0;
 }
 
+.leaflet-interactive {
+  border-radius: 50%;
+  border: 0;
+  outline: none;
+}
+
 /* container base */
 .leaflet-control-layers-base {
 }
