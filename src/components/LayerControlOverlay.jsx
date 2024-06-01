@@ -1,22 +1,32 @@
-import { Circle, LayerGroup, LayersControl, Tooltip } from "react-leaflet";
-
+import { LayerGroup, LayersControl, Polygon, Tooltip } from "react-leaflet";
+import { getRandomColor, getRandomNumber, swapLatLng } from "../utils";
 export default function LayerControlOverlay(kecamatan) {
+  const randomNumberDrugs = getRandomNumber(1000);
+  const randomNumberVisits = getRandomNumber(1000);
+  const color = getRandomColor();
+
   return (
-    <LayersControl.Overlay checked name={kecamatan.id}>
+    <LayersControl.Overlay checked key={kecamatan.name} name={kecamatan.name}>
       <LayerGroup>
-        <Circle
-          center={[kecamatan.lat, kecamatan.lng]}
-          pathOptions={{
-            color: kecamatan.color,
-            fillColor: kecamatan.color,
-          }}
-          radius={kecamatan.radius}
+        <Polygon
+          pathOptions={{ color: color }}
+          positions={swapLatLng(kecamatan.coordinates)}
         >
           <Tooltip direction="bottom" offset={[1.7, 1]} opacity={1}>
-            <p>Spread of Drugs: {kecamatan.drugSpread}</p>
-            <p>Visits: {kecamatan.randomNumber} times</p>
+            <div
+              style={{
+                width: "fit-content",
+                padding: "1rem 2rem",
+                textAlign: "center",
+                border: `3px solid ${color}`,
+              }}
+            >
+              <h3>{kecamatan.name}</h3>
+              <p>Spread of Drugs: {randomNumberDrugs}</p>
+              <p>Visits: {randomNumberVisits} times</p>
+            </div>
           </Tooltip>
-        </Circle>
+        </Polygon>
       </LayerGroup>
     </LayersControl.Overlay>
   );

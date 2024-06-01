@@ -8,7 +8,7 @@ export default function LayersControlContainer({ kecamatanData }) {
     <LayersControl position="topright">
       <LayerControlBaseLayer />
       {kecamatanData.map((kecamatan) => (
-        <LayerControlOverlay key={kecamatan.id} {...kecamatan} />
+        <LayerControlOverlay key={kecamatan.name} {...kecamatan} />
       ))}
     </LayersControl>
   );

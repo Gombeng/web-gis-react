@@ -1,22 +1,15 @@
 /* eslint-disable no-unused-vars */
 import { MapContainer } from "react-leaflet";
-import { generateKecamatanData, getRandomNumber } from "../utils";
-import LayersControlContainer from "./LayerControlContainer";
 import Header from "./Header";
+import LayersControlContainer from "./LayerControlContainer";
+import { coordinates } from "../assets/polygonTpi";
 
 export default function Map() {
-  const amount = 7;
-  const kecamatanData = generateKecamatanData(amount, 6000);
-  const { lat, lng } = kecamatanData[getRandomNumber(amount)];
-
+  const point = [0.914599, 104.516883];
   return (
-    <MapContainer
-      style={{ height: "100vh" }}
-      center={[lat, lng]}
-      zoom={11}
-    >
+    <MapContainer style={{ height: "100vh" }} center={point} zoom={11.5}>
       <Header />
-      <LayersControlContainer kecamatanData={kecamatanData} />
+      <LayersControlContainer kecamatanData={coordinates} />
     </MapContainer>
   );
 }
